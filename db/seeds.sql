@@ -6,5 +6,8 @@ INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES
 INSERT INTO role (title, salary, department_id) VALUES
     ('engineer', 100.000, 69),
     ('server-man', 500.000, 42),
-    ('front-end', 200.000, 90),
+    ('front-end-dev', 200.000, 90),
     ('intern', 20.000, 21);
+INSERT INTO department (name) VALUES
+    ('front-end'),
+    ('back-end');
