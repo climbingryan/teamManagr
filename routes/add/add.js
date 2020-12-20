@@ -11,21 +11,21 @@ const connection = mysql.createConnection({
   database: 'employee'
 });
 
-// addRole = () => {
-//     const query = connection.query(
-//         `INSERT INTO role SET ?`,
-//         {
-//             title: 'testMAN',
-//             salary: 50.000,
-//             department_id: 5
-//         },
-//         function(err, res) {
-//             if (err) throw err;
-//             console.log(res.affectedRows + ' row was affected and has an id of ' + res.insertId);
-//         }
-//     );
-// };
-// addRole();
+addRole = () => {
+    const query = connection.query(
+        `INSERT INTO role SET ?`,
+        {
+            title: 'testMAN',
+            salary: 50.000,
+            department_id: 5
+        },
+        function(err, res) {
+            if (err) throw err;
+            console.log(res.affectedRows + ' row was affected and has an id of ' + res.insertId);
+        }
+    );
+};
+addRole();
 
 addEmployee = () => {
     const query = connection.query(
