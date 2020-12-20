@@ -55,14 +55,47 @@ function start() {
 function viewDepartments() {
     const view = new viewAll();
     view.viewAllDepartments();
+    return inquirer.prompt([
+        {
+            type: 'confirm',
+            name: 'backToStart',
+            message: 'Would you like to continue?'
+        },
+    ]).then( data => {
+        if (data.backToStart) {
+            return start()
+        } 
+    });
 }
 function viewRoles() {
     const view = new viewAll();
     view.viewAllRoles();
+    return inquirer.prompt([
+        {
+            type: 'confirm',
+            name: 'backToStart',
+            message: 'Would you like to continue?'
+        },
+    ]).then( data => {
+        if (data.backToStart) {
+            return start()
+        } 
+    });
 }
 function viewEmployees() {
     const view = new viewAll();
     view.viewAllEmployees();
+    return inquirer.prompt([
+        {
+            type: 'confirm',
+            name: 'backToStart',
+            message: 'Would you like to continue?'
+        },
+    ]).then( data => {
+        if (data.backToStart) {
+            return start()
+        } 
+    });
 }
     // Add functions
 function addDepartment() {
@@ -152,7 +185,29 @@ function addEmployee() {
 };
 
 function updateEmployee() {
-    
+    return inquirer.prompt([
+        {
+            type: 'text',
+            name: 'updateEmployee',
+            message: "Select an employee you'd like to change.",
+        },
+        {
+            type: 'text',
+            name: 'updateRole',
+            message: 'What is the id there new role?'
+        },
+        {
+            type: 'confirm',
+            name: 'backToStart',
+            message: 'Would you like to continue?'
+        },
+    ]).then( data => {
+        const updater = new update();
+        updater.updateEmployee(data.updateEmployee, data.updateRole);
+        if (data.backToStart) {
+            return start()
+        } 
+    });
 }
 
 start();
