@@ -183,7 +183,7 @@ function addEmployee() {
         } 
     });
 };
-
+    // Update Functions
 function updateEmployee() {
     return inquirer.prompt([
         {
