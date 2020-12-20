@@ -21,8 +21,6 @@ viewAllDepartments = () => {
         }
     );
 };
-viewAllDepartments();
-
 
 viewAllRoles = () => {
     const query = connection.query(
@@ -33,7 +31,6 @@ viewAllRoles = () => {
         }
     );
 };
-viewAllRoles();
 
 viewAllEmployees = () => {
     const query = connection.query(
@@ -44,4 +41,3 @@ viewAllEmployees = () => {
         }
     );
 };
-viewAllEmployees();
