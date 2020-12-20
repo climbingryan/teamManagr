@@ -31,17 +31,3 @@ const connection = mysql.createConnection({
 connection.connect(err => {
     if (err) throw err;
 });
-
-addDepartment = () => {
-    const query = connection.query(
-        `INSERT INTO department SET ?`,
-        {
-           name: 'HappyConsoleGamer',
-        },
-        function(err, res) {
-            if (err) throw err;
-            console.log(res.affectedRows + ' row was affected and has an id of ' + res.insertId)
-        }
-    );
-};
-addDepartment();

@@ -44,3 +44,16 @@ addEmployee = () => {
 };
 addEmployee();
 
+addDepartment = () => {
+    const query = connection.query(
+        `INSERT INTO department SET ?`,
+        {
+           name: 'HappyConsoleGamer',
+        },
+        function(err, res) {
+            if (err) throw err;
+            console.log(res.affectedRows + ' row was affected and has an id of ' + res.insertId)
+        }
+    );
+};
+addDepartment();
