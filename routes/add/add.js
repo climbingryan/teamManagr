@@ -15,19 +15,20 @@ class add {
     constructor() {
 
     }
-    addRole = () => {
+    addRole = (name, salary, department) => {
         const query = connection.query(
             `INSERT INTO role SET ?`,
             {
-                title: 'testMAN',
-                salary: 50.000,
-                department_id: 5
+                title: name,
+                salary: salary,
+                department_id: department
             },
             function(err, res) {
                 if (err) throw err;
                 console.log(res.affectedRows + ' row was affected and has an id of ' + res.insertId);
             }
         );
+        return query;
     };
 
     addEmployee = () => {

@@ -51,7 +51,7 @@ function start() {
         }
     });
 };
-    // View All functions
+    // ViewAll functions
 function viewDepartments() {
     const view = new viewAll();
     view.viewAllDepartments();
@@ -64,7 +64,7 @@ function viewEmployees() {
     const view = new viewAll();
     view.viewAllEmployees();
 }
-
+    // Add functions
 function addDepartment() {
     return inquirer.prompt([
         {
@@ -79,7 +79,7 @@ function addDepartment() {
         }
     ]).then( data => {
         const adder = new add();
-        adder.addDepartment(data.addDepartmentName)
+        adder.addDepartment(data.addDepartmentName);
         if (data.backToStart) {
             return start()
         } 
@@ -94,13 +94,13 @@ function addRole() {
         },
         {
             type: 'text',
-            name: 'addRolesalary',
+            name: 'addRoleSalary',
             message: 'What is the salary of the role'
         },
         {
             type: 'text',
             name: 'addRoleDepartment',
-            message: 'Please enter the department of the role'
+            message: 'Please enter the department id of the role'
         },
         {
             type: 'confirm',
@@ -108,6 +108,8 @@ function addRole() {
             message: 'Would you like to go back to the starting menu?'
         }
     ]).then( data => {
+        const adder = new add();
+        adder.addRole(data.addRoleName, data.addRoleSalary, data.addRoleDepartment);
         if (data.backToStart) {
             return start()
         } 
