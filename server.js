@@ -130,12 +130,12 @@ function addEmployee() {
         {
             type: 'text',
             name: 'addEmployeeRole',
-            message: 'What is the role of the employee?'
+            message: 'What is the role id of the employee?'
         },
         {
             type: 'text',
             name: 'addEmployeeManager',
-            message: 'What is the manager of the employee?'
+            message: 'What is the manager id of the employee?'
         },
         {
             type: 'confirm',
@@ -143,6 +143,8 @@ function addEmployee() {
             message: 'Would you like to go back to the starting menu?'
         }
     ]).then( data => {
+        const adder = new add();
+        adder.addEmployee(data.addEmployeeFirstName, data.addEmployeeLastName, data.addEmployeeRole, data.addEmployeeManager);
         if (data.backToStart) {
             return start()
         } 

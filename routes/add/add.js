@@ -31,20 +31,21 @@ class add {
         return query;
     };
 
-    addEmployee = () => {
+    addEmployee = (first_name, last_name, role_id, manager_id) => {
         const query = connection.query(
             `INSERT INTO employee SET ?`,
             {
-            first_name: 'HappyConsole',
-            last_name: 'Gamer',
-            role_id: 9,
-            manager_id: 55 
+            first_name: first_name,
+            last_name: last_name,
+            role_id: role_id,
+            manager_id: manager_id
             },
             function(err, res) {
                 if (err) throw err;
-                console.log(res.affectedRows + ' row was affected and has an id of ' + res.insertId)
+                console.log(res.affectedRows + ' row was affected and has an id of ' + res.insertId);
             }
         );
+        return query;
     };
 
     addDepartment = (name) => {
