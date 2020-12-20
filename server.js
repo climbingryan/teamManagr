@@ -4,24 +4,25 @@ const inquirer = require('inquirer');
     // EXPORT MODULES
 const add = require('./routes/add/add');
 const viewAll = require('./routes/viewAll/viewAll');
+const update = require('./routes/update/update');
 
-    //  START ART
-var figlet = require('figlet');
-        // isometric3  poison  slant  speed
-figlet.text('Employee Manager', {
-    font: 'isometric3',
-    horizontalLayout: 'default',
-    verticalLayout: 'default',
-    width: 400,
-    whitespaceBreak: true
-}, function(err, data) {
-    if (err) {
-        console.log('Something went wrong...');
-        console.dir(err);
-        return;
-    }
-    console.log(data);
-});
+//     //  START ART
+// var figlet = require('figlet');
+//         // isometric3  poison  slant  speed
+// figlet.text('Employee Manager', {
+//     font: 'isometric3',
+//     horizontalLayout: 'default',
+//     verticalLayout: 'default',
+//     width: 400,
+//     whitespaceBreak: true
+// }, function(err, data) {
+//     if (err) {
+//         console.log('Something went wrong...');
+//         console.dir(err);
+//         return;
+//     }
+//     console.log(data);
+// });
 
 const connection = mysql.createConnection({
     host: 'localhost',
@@ -62,6 +63,11 @@ function start() {
         }
     });
 };
+
+function viewDepartments() {
+    const view = new viewAll();
+    view.viewAllDepartments();
+}
 
 
 function addDepartment() {
