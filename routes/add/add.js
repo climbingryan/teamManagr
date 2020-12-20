@@ -11,18 +11,35 @@ const connection = mysql.createConnection({
   database: 'employee'
 });
 
-addRole = () => {
+// addRole = () => {
+//     const query = connection.query(
+//         `INSERT INTO role SET ?`,
+//         {
+//             title: 'testMAN',
+//             salary: 50.000,
+//             department_id: 5
+//         },
+//         function(err, res) {
+//             if (err) throw err;
+//             console.log(res.affectedRows + ' row was affected and has an id of ' + res.insertId);
+//         }
+//     );
+// };
+// addRole();
+
+addEmployee = () => {
     const query = connection.query(
-        `INSERT INTO role SET ?`,
+        `INSERT INTO employee SET ?`,
         {
-            title: 'testMAN',
-            salary: 50.000,
-            department_id: 5
+           first_name: 'HappyConsole',
+           last_name: 'Gamer',
+           role_id: 9,
+           manager_id: 55 
         },
         function(err, res) {
             if (err) throw err;
-            console.log(res.affectedRows + ' row was affected and has an id of ' + res.insertId);
+            console.log(res.affectedRows + ' row was affected and has an id of ' + res.insertId)
         }
     );
 };
-addRole();
+addEmployee();
