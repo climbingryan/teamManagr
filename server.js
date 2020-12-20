@@ -78,6 +78,8 @@ function addDepartment() {
             message: 'Would you like to go back to the starting menu?'
         }
     ]).then( data => {
+        const adder = new add();
+        adder.addDepartment(data.addDepartmentName)
         if (data.backToStart) {
             return start()
         } 
