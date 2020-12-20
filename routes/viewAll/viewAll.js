@@ -30,9 +30,10 @@ class viewAll {
             `SELECT * FROM role`,
             function(err, res) {
                 if (err) throw err;
-                console.table(res);
+                return console.table(res);
             }
         );
+        return query;
     };
     
     viewAllEmployees() {
@@ -40,9 +41,10 @@ class viewAll {
             `SELECT * FROM employee`,
             function(err, res) {
                 if (err) throw err;
-                console.table(res);
+                return console.table(res);
             }
         );
+        return query;
     };
 }
 

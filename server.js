@@ -1,5 +1,3 @@
-const mysql = require('mysql2');   
-const cTable = require('console.table');
 const inquirer = require('inquirer');
     // EXPORT MODULES
 const add = require('./routes/add/add');
@@ -23,16 +21,6 @@ const update = require('./routes/update/update');
 //     }
 //     console.log(data);
 // });
-
-const connection = mysql.createConnection({
-    host: 'localhost',
-    port: 3306,
-    // Your MySQL username
-    user: 'root',
-    // Your MySQL password
-    password: '$ThorianXcode&MAX2020',
-    database: 'employee'
-  });
 
 function start() {
     return inquirer.prompt([
@@ -63,12 +51,19 @@ function start() {
         }
     });
 };
-
+    // View All functions
 function viewDepartments() {
     const view = new viewAll();
     view.viewAllDepartments();
 }
-
+function viewRoles() {
+    const view = new viewAll();
+    view.viewAllRoles();
+}
+function viewEmployees() {
+    const view = new viewAll();
+    view.viewAllEmployees();
+}
 
 function addDepartment() {
     return inquirer.prompt([
