@@ -10,4 +10,6 @@ INSERT INTO role (title, salary, department_id) VALUES
     ('intern', 20.000, 21);
 INSERT INTO department (name) VALUES
     ('front-end'),
-    ('back-end');
+    ('back-end'),
+    ('UX/UI Designers'),
+    ('Quality Assuance');
