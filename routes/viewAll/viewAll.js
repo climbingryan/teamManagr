@@ -11,6 +11,7 @@ const connection = mysql.createConnection({
   database: 'ice_creamDB'
 });
 
+
 viewAllDepartments = () => {
     const query = connection.query(
         `SELECT * FROM department`,
@@ -21,3 +22,15 @@ viewAllDepartments = () => {
     );
 };
 viewAllDepartments();
+
+
+viewAllRoles = () => {
+    const query = connection.query(
+        `SELECT * FROM role`,
+        function(err, res) {
+            if (err) throw err;
+            console.table(res);
+        }
+    );
+};
+viewAllRoles();
